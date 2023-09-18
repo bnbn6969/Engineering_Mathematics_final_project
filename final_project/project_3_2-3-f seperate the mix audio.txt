@@ -1,0 +1,10 @@
+[y,fs]=audioread('audio_mix.wav');
+nfft=1024;
+Y=fft(y,nfft);
+X=Y(13:29)
+YY=real(ifft(X,nfft))*1000
+time=(1:length(YY*100))/fs
+plot(time,YY*100)
+load handel.mat
+audioFile='handel.wav';
+audiowrite(audioFile,YY,1000)

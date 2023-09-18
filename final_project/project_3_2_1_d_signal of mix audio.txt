@@ -1,0 +1,6 @@
+[y, fs]=audioread('audio_mix.wav');
+time=(1:length(y))/fs; 
+plot(time, y); 
+xlabel("Time (s)");
+ylabel("Amplitude");
+title("Signal of mix audio");

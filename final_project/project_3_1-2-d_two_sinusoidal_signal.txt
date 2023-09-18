@@ -1,0 +1,20 @@
+N = 256;			% 點數
+fs = 200;			% 取樣頻率
+freqStep = fs/N;		% 頻域的頻率的解析度
+time = (0:N-1)/fs;		% 時域的時間刻度
+y1 = cos(2*pi*10*time);		% Signal to analyze
+y2 = cos(2*pi*10*time)+sin(2*pi*10*time);
+
+% Plot time data
+subplot(2,1,1);
+plot(time, y1, '.-');
+title('Sinusoidal signals');
+xlabel('Time (seconds)'); ylabel('Amplitude');
+axis tight
+
+% Plot time data
+subplot(2,1,2);
+plot(time, y2, '.-');
+title('Sinusoidal signals');
+xlabel('Time (seconds)'); ylabel('Amplitude');
+axis tight

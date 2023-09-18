@@ -1,0 +1,6 @@
+[y, fs]=audioread('Audio_bottlenose-dolphin.mp3');
+time=(1:length(y))/fs; 
+plot(time, y); 
+xlabel("Time (s)");
+ylabel("Amplitude");
+title("Signal of dolphin");

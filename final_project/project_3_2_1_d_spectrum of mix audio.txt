@@ -1,0 +1,10 @@
+[y,fs]=audioread('audio_mix.wav');
+t=linspace(0,length(y)/fs,length(y));
+nfft=1024;
+f=linspace(0,fs,nfft);
+Y=abs(fft(y,nfft));
+figure;
+plot(f(1:nfft/2),Y(1:nfft/2));
+xlabel("frequecy(hz)");
+ylabel("magnitude spectrum");
+title(" spectrum of mix audio");

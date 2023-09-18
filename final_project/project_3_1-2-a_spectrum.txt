@@ -1,0 +1,12 @@
+N = 256;			% 點數
+fs = 200;			% 取樣頻率
+freqStep = fs/N;		% 頻域的頻率的解析度
+time = (0:N-1)/fs;		% 時域的時間刻度
+y = cos(2*pi*10*time)+sin(2*pi*10*time);		% Signal to analyze
+Y = fft(y);			% Spectrum
+Y = fftshift(Y);		% 將頻率軸的零點置中
+% Plot spectral magnitude
+freq = freqStep*(-N/2:N/2-1);	% 頻域的頻率刻度
+plot(freq, abs(Y), '.-b'); grid on
+xlabel('Frequency)'); 
+ylabel('Magnitude (Linear)');

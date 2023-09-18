@@ -1,0 +1,6 @@
+[y, fs]=audioread('Audio_humpback-whale and ocean-noise.mp3');
+time=(1:length(y))/fs; 
+plot(time, y); 
+xlabel("Time (s)");
+ylabel("Amplitude");
+title("Signal of Whale + ocean noise");
